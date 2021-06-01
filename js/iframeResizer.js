@@ -1427,15 +1427,8 @@
     }
   }
 
-  if (window.jQuery) {
-    createJQueryPublicMethod(window.jQuery)
-  }
+  if (window.jQuery) { createJQueryPublicMethod(window.jQuery); }
 
-  if (typeof define === 'function' && define.amd) {
-    define([], factory)
-  } else if (typeof module === 'object' && typeof module.exports === 'object') {
-    // Node for browserfy
-    module.exports = factory()
-  }
-  window.iFrameResize = window.iFrameResize || factory()
+  window.workbuster = window.workbuster || {}
+  window.workbuster.iFrameResize = window.workbuster.iFrameResize || factory();
 })()
